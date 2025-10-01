@@ -12,6 +12,9 @@ func Pokedex(config *config.Config, args ...string) error {
 		return fmt.Errorf("pokedex command does not take any arguments")
 	}
 
+	fmt.Println()
+	fmt.Println("Pokedex:")
+	fmt.Println()
 	pokedex := config.Pokedex
 	pokemonList := pokedex.ListPokemon()
 	if len(pokemonList) == 0 {
@@ -20,7 +23,7 @@ func Pokedex(config *config.Config, args ...string) error {
 	}
 	slices.Sort(pokemonList)
 	for i, pokemon := range pokemonList {
-		fmt.Printf("%d. %s\n", i+1, pokemon)
+		fmt.Printf("  %d. %s\n", i+1, pokemon)
 	}
 	fmt.Println()
 	return nil

@@ -25,6 +25,7 @@ func Inspect(config *config.Config, args ...string) error {
 		return fmt.Errorf("You have not caught %s yet. %s is not in your Pokedex.", pokemonName, pokemonName)
 	}
 
+	fmt.Println()
 	fmt.Printf("Name: %s\n", pokemon.Name)
 	fmt.Printf("Height: %d\n", pokemon.Height)
 	fmt.Printf("Weight: %d\n", pokemon.Weight)
